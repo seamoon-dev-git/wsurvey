@@ -1,0 +1,17 @@
+### 공통 로그 설정
+logging:
+  charset:
+    console: UTF-8
+    file: UTF-8
+  pattern:
+    #console pattern 예 : [2024-06-30 15:26:31] [DEBUG] 5692 --- [              main] ySourcesPropertyResolver$DefaultResolver [o.s.c.e.PropertySourcesPropertyResolver.logKeyFound] : Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+    #file pattern 예 : [2024-06-30 17:05:32] [ INFO] 5866 --- [              main] com.woongjin.pjt.web.WebMain             : Starting WebMain using Java 17.0.7 on seamoon.local with PID 5866 (/Users/seamoon/DEV/workspace/pjt/wsurvey/web/target/classes started by seamoon in /Users/seamoon/DEV/workspace/pjt/wsurvey)
+    dateformat: "yyyy-MM-dd HH:mm:ss" # 날짜 형식 지원 연도-월-일 시:분:초
+    console: "%clr([%d{${logging.pattern.dateformat}}]){yellow} %clr([%5p]) %clr(${PID:-}){magenta} --- %clr([%18.18t]){blue} %clr(%-40.40logger{40}){cyan} %clr([%C{2}.%M]){green} %clr(:){faint} %m %n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+    file: "[%d{${logging.pattern.dateformat}}] [%5p] ${PID:-} --- [%18.18t] %-40.40logger{40} : %m %n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+  logback:
+    rollingpolicy:
+      max-history: 7        #최대 파일 생성 갯 수
+      max-file-size: 100MB  #한 파일당 최대 파일 용량 지정
+      total-size-cap: 10GB  #아카이브한 로그 파일의 최대 사이즈 정보
+      file-name-pattern: "%d{yyyy-MM-dd}.%i.gz" #날짜별로 아카이브 파일 생성
