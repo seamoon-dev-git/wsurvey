@@ -1,0 +1,5 @@
+### 로그 설정
+logging:
+  file:
+    path: /Users/seamoon/DEV/workspace/upload/logs/wsurvey/api/
+    name: wsurvey-api-local

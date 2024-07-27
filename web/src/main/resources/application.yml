@@ -1,7 +1,7 @@
 spring:
   profiles:
     group:
-      development: common,common-local,local
+      development: common, common-local, local
       quality-assurance: common, common-qas, qas
       production: common,common-prd
 
