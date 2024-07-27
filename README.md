@@ -32,3 +32,14 @@
   * 기본 spring boot 설정 사용하지 않음
   * core 모듈에 file-appender.xml 파일 추가 후 커스텀
   * file은 일반 파일 로그 와 에러 파일 로그 로 구분
+
+### 4. ErrorCode 추가
+* 에러 코드를 Enum 형태로 관리
+* http 코드 반환 : status
+* 에러 코드 값 : errorCode
+* 에러 메세지 : errorMessage
+
+### 5. BusinessException 
+* Business 로직 수행 시 발생하는 예외를 처리하기 위한 Exception 클래스
+* RuntimeException 을 상속받도록 함.
+
